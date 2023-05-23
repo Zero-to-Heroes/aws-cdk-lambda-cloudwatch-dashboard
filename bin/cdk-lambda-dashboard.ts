@@ -24,6 +24,54 @@ lambdaDashboardStack.addLambda(
   "CreateFullReviewStack-PopulateGameSummaryFunction-1CKMNQ86EWASV",
   "trigger-create-full-review"
 );
+lambdaDashboardStack.addLambda(
+  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
+  "api-retrieve-user-match-stats"
+);
+lambdaDashboardStack.addLambda(
+  "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
+  "api-retrieve-user-match-stats-2"
+);
+lambdaDashboardStack.addLambda(
+  "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-F21W8EPJLG9P",
+  "api-retrieve-user-bgs-best-stats"
+);
+lambdaDashboardStack.addLambda(
+  "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
+  "api-retrieve-user-bgs-best-stats-2"
+);
+lambdaDashboardStack.addLambda(
+  "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-hq7XqPkpeOB0",
+  "api-start-save-twitch-presence"
+);
+lambdaDashboardStack.addLambda(
+  "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
+  "api-start-save-twitch-presence-2"
+);
+lambdaDashboardStack.addLambda(
+  "TwitchPresenceStack-ProcessSaveTwitchPresenceFunct-CTG1cCc2BcWb",
+  "process-save-twitch-presence"
+);
+lambdaDashboardStack.addLambda(
+  "TwitchPresenceStack-RetrieveTwitchPresenceFunction-asbSWYenLgW0",
+  "api-retrieve-twitch-presence-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserAchievementsStack-RetrieveAchievementsFunction-4WKJNDR8R6D2",
+  "api-retrieve-achievements"
+);
+lambdaDashboardStack.addLambda(
+  "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
+  "api-retrieve-achievements-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
+  "process-save-bgs-post-match-stats"
+);
+lambdaDashboardStack.addLambda(
+  "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-A84Wj7WJ7NqZ",
+  "api-retrieve-bgs-post-match-stats-2"
+);
 
 lambdaDashboardStack.addLambda(
   "AuthStack-AuthFunction-Q68CiWS0cRqs",
@@ -74,10 +122,6 @@ lambdaDashboardStack.addLambda(
   "mr-lambda-reducer"
 );
 lambdaDashboardStack.addLambda(
-  "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
-  "api-retrieve-user-match-stats-2"
-);
-lambdaDashboardStack.addLambda(
   "PublishBgsPerfectGameStac-BuildBgsPerfectGamesFunc-FGdcis7zkK8W",
   "cron-build-bgs-perfect-games"
 );
@@ -102,20 +146,8 @@ lambdaDashboardStack.addLambda(
   "api-retrieve-review-2"
 );
 lambdaDashboardStack.addLambda(
-  "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-F21W8EPJLG9P",
-  "api-retrieve-user-bgs-best-stats"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
-  "api-retrieve-user-bgs-best-stats-2"
-);
-lambdaDashboardStack.addLambda(
   "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
   "api-retrieve-user-duels-runs-2"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
-  "api-retrieve-user-match-stats"
 );
 lambdaDashboardStack.addLambda(
   "SimulateBgsBattleStack-SimulateBgsBattleFunctionLi-BhXWqLooZGey",
@@ -134,32 +166,8 @@ lambdaDashboardStack.addLambda(
   "cron-build-mercenaries-stats"
 );
 lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-ProcessSaveTwitchPresenceFunct-CTG1cCc2BcWb",
-  "process-save-twitch-presence"
-);
-lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-RetrieveTwitchPresenceFunction-asbSWYenLgW0",
-  "api-retrieve-twitch-presence-2"
-);
-lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-hq7XqPkpeOB0",
-  "api-start-save-twitch-presence"
-);
-lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
-  "api-start-save-twitch-presence-2"
-);
-lambdaDashboardStack.addLambda(
   "TwitterStack-BuildTwitterFunction-00rWH4qXQgww",
   "cron-build-twitter"
-);
-lambdaDashboardStack.addLambda(
-  "UserAchievementsStack-RetrieveAchievementsFunction-4WKJNDR8R6D2",
-  "api-retrieve-achievements"
-);
-lambdaDashboardStack.addLambda(
-  "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
-  "api-retrieve-achievements-2"
 );
 lambdaDashboardStack.addLambda(
   "UserAchievementsStack-StartSaveAchievementsFunctio-1Q0LH8YML57AP",
@@ -176,14 +184,6 @@ lambdaDashboardStack.addLambda(
 lambdaDashboardStack.addLambda(
   "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-iSDQqoK8wzIs",
   "api-start-save-arena-rewards-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
-  "process-save-bgs-post-match-stats"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-A84Wj7WJ7NqZ",
-  "api-retrieve-bgs-post-match-stats-2"
 );
 lambdaDashboardStack.addLambda(
   "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-MC9A0ZZB1CBQ",
@@ -210,14 +210,14 @@ lambdaDashboardStack.addLambda(
   "process-save-packs"
 );
 lambdaDashboardStack.addLambda(
+  "UserProfileStack-RetrieveOwnProfileFunction-OPzqESAYjDju",
+  "api-retrieve-own-profile"
+);
+lambdaDashboardStack.addLambda(
   "UserPrefsStack-RetrievePrefsFunction2-vsyqbBbNwpa5",
   "api-retrieve-prefs-2"
 );
 lambdaDashboardStack.addLambda(
   "UserPrefsStack-StartSavePrefsFunction2-BAihDOyl63Qj",
   "api-start-save-prefs-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-RetrieveOwnProfileFunction-OPzqESAYjDju",
-  "api-retrieve-own-profile"
 );
