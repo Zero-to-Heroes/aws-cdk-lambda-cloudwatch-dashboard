@@ -214,6 +214,14 @@ lambdaDashboardStack.addLambda(
   "api-retrieve-own-profile"
 );
 lambdaDashboardStack.addLambda(
+  "UserProfileStack-UpdateProfileFunction-oDgojeMfjskx",
+  "api-update-profile"
+);
+lambdaDashboardStack.addLambda(
+  "UserProfileStack-RetrieveProfileFunction-FLZZpdmlf10v",
+  "api-retrieve-profile"
+);
+lambdaDashboardStack.addLambda(
   "UserPrefsStack-RetrievePrefsFunction2-vsyqbBbNwpa5",
   "api-retrieve-prefs-2"
 );
