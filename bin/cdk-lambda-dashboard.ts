@@ -214,8 +214,20 @@ lambdaDashboardStack.addLambda(
   "api-retrieve-own-profile"
 );
 lambdaDashboardStack.addLambda(
+  "UserProfileStack-RetrieveOtherProfileFunction-aNvcb2vibmPU",
+  "api-retrieve-other-profile"
+);
+lambdaDashboardStack.addLambda(
   "UserProfileStack-UpdateProfileFunction-oDgojeMfjskx",
   "api-update-profile"
+);
+lambdaDashboardStack.addLambda(
+  "UserProfileStack-ShareProfileFunction-IedKMblyFEBn",
+  "api-share-profile"
+);
+lambdaDashboardStack.addLambda(
+  "UserProfileStack-UnshareProfileFunction-d1TVXzlunAht",
+  "api-unshare-profile"
 );
 lambdaDashboardStack.addLambda(
   "UserProfileStack-RetrieveProfileFunction-FLZZpdmlf10v",
