@@ -241,3 +241,7 @@ lambdaDashboardStack.addLambda(
   "UserPrefsStack-StartSavePrefsFunction2-BAihDOyl63Qj",
   "api-start-save-prefs-2"
 );
+lambdaDashboardStack.addLambda(
+  "AuthStack-GenerateFirestoneTokenFunction-w2TohjJDEwgm",
+  "api-generate-firestone-token"
+);
