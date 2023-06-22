@@ -245,3 +245,11 @@ lambdaDashboardStack.addLambda(
   "AuthStack-GenerateFirestoneTokenFunction-w2TohjJDEwgm",
   "api-generate-firestone-token"
 );
+lambdaDashboardStack.addLambda(
+  "LotteryStack-UpdateLotteryFunction-gZOvlcn8cWE6",
+  "api-lottery-update"
+);
+lambdaDashboardStack.addLambda(
+  "LotteryStack-PickLotterWinnersFunction-tOirJ6hxlXOL",
+  "cron-pick-lottery-winners"
+);
