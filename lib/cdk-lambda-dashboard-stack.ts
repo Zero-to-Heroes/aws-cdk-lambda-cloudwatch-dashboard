@@ -55,6 +55,22 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
       },
     });
 
+  // TODO/ Maybe look https://aws.amazon.com/blogs/mt/visualizing-amazon-cloudwatch-costs-part-2-where-does-the-data-come-from/
+  protected readonly cost = (functionName: string) =>
+    new MathExpression({
+      label: "Cost ($)",
+      color: "#2ca02c",
+      expression: "100 - 100 * errors / MAX([errors, invocations])",
+      usingMetrics: {
+        errors: this.errors.with({
+          dimensions: { FunctionName: functionName },
+        }),
+        invocations: this.invocations.with({
+          dimensions: { FunctionName: functionName },
+        }),
+      },
+    });
+
   protected readonly throttles = new Metric({
     namespace: "AWS/Lambda",
     metricName: "Throttles",
@@ -124,6 +140,11 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
         ],
         right: [this.availability(functionName)],
       })
+
+      // new GraphWidget({
+      //   title: displayName + " Cost",
+      //   left: [this.costs(functionName)],
+      // })
     );
   }
 }
