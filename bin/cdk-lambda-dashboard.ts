@@ -41,24 +41,12 @@ lambdaDashboardStack.addLambda(
   "api-retrieve-user-bgs-best-stats-2"
 );
 lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-hq7XqPkpeOB0",
-  "api-start-save-twitch-presence"
-);
-lambdaDashboardStack.addLambda(
   "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
   "api-start-save-twitch-presence-2"
 );
 lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-ProcessSaveTwitchPresenceFunct-CTG1cCc2BcWb",
-  "process-save-twitch-presence"
-);
-lambdaDashboardStack.addLambda(
   "TwitchPresenceStack-RetrieveTwitchPresenceFunction-asbSWYenLgW0",
   "api-retrieve-twitch-presence-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserAchievementsStack-RetrieveAchievementsFunction-4WKJNDR8R6D2",
-  "api-retrieve-achievements"
 );
 lambdaDashboardStack.addLambda(
   "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
@@ -88,10 +76,6 @@ lambdaDashboardStack.addLambda(
 lambdaDashboardStack.addLambda(
   "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
   "api-retrieve-duels-leaderboard-2"
-);
-lambdaDashboardStack.addLambda(
-  "FeedbackStack-ProcessFeedbackFunction-13539NTZ0TH39",
-  "api-feedback"
 );
 lambdaDashboardStack.addLambda(
   "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-10AGMMKZ66GWW",
@@ -161,38 +145,34 @@ lambdaDashboardStack.addLambda(
   "TriggerBuildDuelsStatsStac-BuildDuelsStatsFunction-C99P6IG8LRFL",
   "cron-build-duels-stats"
 );
-lambdaDashboardStack.addLambda(
-  "TriggerBuildMercenariesSt-BuildMercenariesStatsFun-lJdHCPY81s31",
-  "cron-build-mercenaries-stats"
-);
-lambdaDashboardStack.addLambda(
-  "TwitterStack-BuildTwitterFunction-00rWH4qXQgww",
-  "cron-build-twitter"
-);
-lambdaDashboardStack.addLambda(
-  "UserAchievementsStack-StartSaveAchievementsFunctio-1Q0LH8YML57AP",
-  "api-start-save-achievements"
-);
+// lambdaDashboardStack.addLambda(
+//   "TriggerBuildMercenariesSt-BuildMercenariesStatsFun-lJdHCPY81s31",
+//   "cron-build-mercenaries-stats"
+// );
+// lambdaDashboardStack.addLambda(
+//   "TwitterStack-BuildTwitterFunction-00rWH4qXQgww",
+//   "cron-build-twitter"
+// );
 lambdaDashboardStack.addLambda(
   "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
   "api-retrieve-arena-rewards-2"
 );
-lambdaDashboardStack.addLambda(
-  "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-QaYyx36W2LKg",
-  "api-start-save-arena-rewards"
-);
+// lambdaDashboardStack.addLambda(
+//   "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-QaYyx36W2LKg",
+//   "api-start-save-arena-rewards"
+// );
 lambdaDashboardStack.addLambda(
   "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-iSDQqoK8wzIs",
   "api-start-save-arena-rewards-2"
 );
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-MC9A0ZZB1CBQ",
-  "api-retrieve-bgs-post-match-stats"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-U1NFYLWK3E0N",
-  "api-start-save-bgs-post-match-stats"
-);
+// lambdaDashboardStack.addLambda(
+//   "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-MC9A0ZZB1CBQ",
+//   "api-retrieve-bgs-post-match-stats"
+// );
+// lambdaDashboardStack.addLambda(
+//   "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-U1NFYLWK3E0N",
+//   "api-start-save-bgs-post-match-stats"
+// );
 lambdaDashboardStack.addLambda(
   "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-s4bDntWeqkXH",
   "api-start-save-bgs-post-match-stats-2"
@@ -233,14 +213,14 @@ lambdaDashboardStack.addLambda(
   "UserProfileStack-RetrieveProfileFunction-FLZZpdmlf10v",
   "api-retrieve-profile"
 );
-lambdaDashboardStack.addLambda(
-  "UserPrefsStack-RetrievePrefsFunction2-vsyqbBbNwpa5",
-  "api-retrieve-prefs-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserPrefsStack-StartSavePrefsFunction2-BAihDOyl63Qj",
-  "api-start-save-prefs-2"
-);
+// lambdaDashboardStack.addLambda(
+//   "UserPrefsStack-RetrievePrefsFunction2-vsyqbBbNwpa5",
+//   "api-retrieve-prefs-2"
+// );
+// lambdaDashboardStack.addLambda(
+//   "UserPrefsStack-StartSavePrefsFunction2-BAihDOyl63Qj",
+//   "api-start-save-prefs-2"
+// );
 lambdaDashboardStack.addLambda(
   "AuthStack-GenerateFirestoneTokenFunction-w2TohjJDEwgm",
   "api-generate-firestone-token"
@@ -252,4 +232,12 @@ lambdaDashboardStack.addLambda(
 lambdaDashboardStack.addLambda(
   "LotteryStack-PickLotterWinnersFunction-tOirJ6hxlXOL",
   "cron-pick-lottery-winners"
+);
+lambdaDashboardStack.addLambda(
+  "ConstructedStatsStack-BuildConstructedDeckStats-vr9hB67T5NX2",
+  "cron-build-constructed-deck-stats"
+);
+lambdaDashboardStack.addLambda(
+  "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
+  "process-assign-archetype"
 );
