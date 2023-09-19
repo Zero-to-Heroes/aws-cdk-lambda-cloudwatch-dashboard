@@ -77,10 +77,10 @@ lambdaDashboardStack.addLambda(
   "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
   "api-retrieve-duels-leaderboard-2"
 );
-lambdaDashboardStack.addLambda(
-  "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-10AGMMKZ66GWW",
-  "api-save-bgs-simulation-sample"
-);
+// lambdaDashboardStack.addLambda(
+//   "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-10AGMMKZ66GWW",
+//   "api-save-bgs-simulation-sample"
+// );
 lambdaDashboardStack.addLambda(
   "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-XdHoinVSW1lU",
   "api-bgs-get-id-from-sample-2"
