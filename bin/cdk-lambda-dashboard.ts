@@ -20,25 +20,51 @@ const lambdaDashboardStack = new CdkLambdaDashboardStack(
 // lambdaDashboardStack.addLambda("UpdateTransaction", "UpdateTransaction");
 // lambdaDashboardStack.addLambda("GetTransaction", "GetTransaction");
 
+// Trying to keep this roughly ordered based on the volume / criticality of the functions
 lambdaDashboardStack.addLambda(
   "CreateFullReviewStack-PopulateGameSummaryFunction-1CKMNQ86EWASV",
   "trigger-create-full-review"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
-  "api-retrieve-user-match-stats"
 );
 lambdaDashboardStack.addLambda(
   "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
   "api-retrieve-user-match-stats-2"
 );
 lambdaDashboardStack.addLambda(
-  "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-F21W8EPJLG9P",
-  "api-retrieve-user-bgs-best-stats"
+  "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
+  "process-save-bgs-post-match-stats"
 );
 lambdaDashboardStack.addLambda(
   "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
   "api-retrieve-user-bgs-best-stats-2"
+);
+lambdaDashboardStack.addLambda(
+  "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
+  "api-retrieve-duels-leaderboard-2"
+);
+lambdaDashboardStack.addLambda(
+  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
+  "api-retrieve-user-duels-runs-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
+  "api-retrieve-achievements-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
+  "api-retrieve-arena-rewards-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
+  "process-save-packs"
+);
+lambdaDashboardStack.addLambda(
+  "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
+  "process-assign-archetype"
+);
+
+lambdaDashboardStack.addLambda(
+  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
+  "api-retrieve-user-match-stats"
 );
 lambdaDashboardStack.addLambda(
   "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
@@ -49,16 +75,16 @@ lambdaDashboardStack.addLambda(
   "api-retrieve-twitch-presence-2"
 );
 lambdaDashboardStack.addLambda(
-  "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
-  "api-retrieve-achievements-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
-  "process-save-bgs-post-match-stats"
-);
-lambdaDashboardStack.addLambda(
   "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-A84Wj7WJ7NqZ",
   "api-retrieve-bgs-post-match-stats-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-iSDQqoK8wzIs",
+  "api-start-save-arena-rewards-2"
+);
+lambdaDashboardStack.addLambda(
+  "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-s4bDntWeqkXH",
+  "api-start-save-bgs-post-match-stats-2"
 );
 
 lambdaDashboardStack.addLambda(
@@ -72,10 +98,6 @@ lambdaDashboardStack.addLambda(
 lambdaDashboardStack.addLambda(
   "CronExportStatsStack-ExportHsDecks-SQQQwX0TL7eF",
   "cron-export-stats-hsdecks"
-);
-lambdaDashboardStack.addLambda(
-  "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
-  "api-retrieve-duels-leaderboard-2"
 );
 // lambdaDashboardStack.addLambda(
 //   "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-10AGMMKZ66GWW",
@@ -130,10 +152,6 @@ lambdaDashboardStack.addLambda(
   "api-retrieve-review-2"
 );
 lambdaDashboardStack.addLambda(
-  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
-  "api-retrieve-user-duels-runs-2"
-);
-lambdaDashboardStack.addLambda(
   "SimulateBgsBattleStack-SimulateBgsBattleFunctionLi-BhXWqLooZGey",
   "api-simulate-battlegrounds-battle-2"
 );
@@ -153,18 +171,10 @@ lambdaDashboardStack.addLambda(
 //   "TwitterStack-BuildTwitterFunction-00rWH4qXQgww",
 //   "cron-build-twitter"
 // );
-lambdaDashboardStack.addLambda(
-  "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
-  "api-retrieve-arena-rewards-2"
-);
 // lambdaDashboardStack.addLambda(
 //   "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-QaYyx36W2LKg",
 //   "api-start-save-arena-rewards"
 // );
-lambdaDashboardStack.addLambda(
-  "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-iSDQqoK8wzIs",
-  "api-start-save-arena-rewards-2"
-);
 // lambdaDashboardStack.addLambda(
 //   "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-MC9A0ZZB1CBQ",
 //   "api-retrieve-bgs-post-match-stats"
@@ -174,20 +184,12 @@ lambdaDashboardStack.addLambda(
 //   "api-start-save-bgs-post-match-stats"
 // );
 lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-s4bDntWeqkXH",
-  "api-start-save-bgs-post-match-stats-2"
-);
-lambdaDashboardStack.addLambda(
   "UserMappingStack2-StartSaveMappingFunction-1XPZIJ8YG29RH",
   "api-start-save-mapping"
 );
 lambdaDashboardStack.addLambda(
   "UserMappingStack2-StartSaveMappingFunction2-N8wDp6ws7NqN",
   "api-start-save-mapping-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
-  "process-save-packs"
 );
 lambdaDashboardStack.addLambda(
   "UserProfileStack-RetrieveOwnProfileFunction-OPzqESAYjDju",
@@ -236,8 +238,4 @@ lambdaDashboardStack.addLambda(
 lambdaDashboardStack.addLambda(
   "ConstructedStatsStack-BuildConstructedDeckStats-vr9hB67T5NX2",
   "cron-build-constructed-deck-stats"
-);
-lambdaDashboardStack.addLambda(
-  "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
-  "process-assign-archetype"
 );
