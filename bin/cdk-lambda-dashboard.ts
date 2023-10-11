@@ -14,14 +14,13 @@ const lambdaDashboardStack = new CdkLambdaDashboardStack(
 );
 
 // Create a graph widget to display incoming bytes for each Lambda function
-const logsWidget = new GraphWidget({
+const logsIncomingBytesWidget = new GraphWidget({
   width: 24, // Width of the widget
   title: "Incoming Bytes for Lambda Functions", // Widget title
   left: [], // Metrics to display on the left Y-axis
   right: [], // Metrics to display on the right Y-axis
   height: 12,
 });
-
 // Add incoming bytes metrics for each Lambda function to the graph widget
 lambdaDefinitions.forEach(({ id, name }, index) => {
   const metricName = "IncomingBytes"; // Replace with the correct metric name
@@ -36,10 +35,9 @@ lambdaDefinitions.forEach(({ id, name }, index) => {
   });
 
   // Add the metric to the graph widget
-  logsWidget.addLeftMetric(metric);
+  logsIncomingBytesWidget.addLeftMetric(metric);
 });
-
-lambdaDashboardStack.addWidget(logsWidget);
+lambdaDashboardStack.addWidget(logsIncomingBytesWidget);
 
 // Iterate over the lambdaDefinitions array to add Lambda widgets
 lambdaDefinitions.forEach(({ id, name }) => {

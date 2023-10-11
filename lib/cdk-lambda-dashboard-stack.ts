@@ -102,9 +102,14 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     statistic: "sum",
   });
 
-  protected readonly memoryUsage = new Metric({
+  protected readonly memoryUsagePercent = new Metric({
     namespace: "LambdaInsights",
     metricName: "memory_utilization",
+    statistic: "maximum",
+  });
+  protected readonly memoryUsagePValue = new Metric({
+    namespace: "LambdaInsights",
+    metricName: "used_memory_max",
     statistic: "maximum",
   });
 
@@ -154,7 +159,14 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
       new GraphWidget({
         title: displayName + " Max Memory",
         left: [
-          this.memoryUsage.with({
+          this.memoryUsagePercent.with({
+            dimensions: {
+              function_name: functionName,
+            },
+          }),
+        ],
+        right: [
+          this.memoryUsagePValue.with({
             dimensions: {
               function_name: functionName,
             },
