@@ -86,7 +86,7 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
   protected readonly concurrentExecutions = new Metric({
     namespace: "AWS/Lambda",
     metricName: "ConcurrentExecutions",
-    statistic: "sum",
+    statistic: "maximum",
   });
 
   protected readonly provisionedConcurrentExecutions = new Metric({
@@ -139,11 +139,33 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
           //   }),
         ],
         right: [this.availability(functionName)],
+      }),
+
+      new GraphWidget({
+        title: displayName + " Max Concurrent Executions",
+        left: [
+          this.concurrentExecutions.with({
+            dimensions: dimensions,
+          }),
+        ],
+      }),
+
+      new GraphWidget({
+        title: displayName + " Throttles",
+        left: [
+          this.throttles.with({
+            dimensions: dimensions,
+          }),
+        ],
       })
 
       // new GraphWidget({
-      //   title: displayName + " Cost",
-      //   left: [this.costs(functionName)],
+      //   title: displayName + " Provisioned Concurrency Utilization",
+      //   left: [
+      //     this.provisionedConcurrencyUtilization.with({
+      //       dimensions: dimensions,
+      //     }),
+      //   ],
       // })
     );
   }
