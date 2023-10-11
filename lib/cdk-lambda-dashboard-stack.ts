@@ -1,6 +1,7 @@
 import {
   Dashboard,
   GraphWidget,
+  IWidget,
   MathExpression,
   Metric,
 } from "@aws-cdk/aws-cloudwatch";
@@ -101,6 +102,12 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     statistic: "sum",
   });
 
+  protected readonly memoryUsage = new Metric({
+    namespace: "LambdaInsights",
+    metricName: "memory_utilization",
+    statistic: "maximum",
+  });
+
   constructor(scope: cdk.App, id: string, props: LambdaDashboardsStackProps) {
     super(scope, id, props);
 
@@ -131,12 +138,6 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
           this.errors.with({
             dimensions: dimensions,
           }),
-          //   this.throttles.with({
-          //     dimensions: dimensions,
-          //   }),
-          //   this.provisionedConcurrencySpillovers.with({
-          //     dimensions: dimensions,
-          //   }),
         ],
         right: [this.availability(functionName)],
       }),
@@ -151,13 +152,24 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
       }),
 
       new GraphWidget({
-        title: displayName + " Throttles",
+        title: displayName + " Max Memory",
         left: [
-          this.throttles.with({
-            dimensions: dimensions,
+          this.memoryUsage.with({
+            dimensions: {
+              function_name: functionName,
+            },
           }),
         ],
       })
+
+      // new GraphWidget({
+      //   title: displayName + " Throttles",
+      //   left: [
+      //     this.throttles.with({
+      //       dimensions: dimensions,
+      //     }),
+      //   ],
+      // })
 
       // new GraphWidget({
       //   title: displayName + " Provisioned Concurrency Utilization",
@@ -168,5 +180,9 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
       //   ],
       // })
     );
+  }
+
+  public addWidget(widget: IWidget) {
+    this.lambdaDashboard.addWidgets(widget);
   }
 }

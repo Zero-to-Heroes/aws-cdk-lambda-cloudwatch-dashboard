@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+import { GraphWidget, Metric } from "@aws-cdk/aws-cloudwatch";
 import * as cdk from "@aws-cdk/core";
 import { CdkLambdaDashboardStack } from "../lib/cdk-lambda-dashboard-stack";
+import { lambdaDefinitions } from "./lambdas";
 
 const app = new cdk.App();
-
 const lambdaDashboardStack = new CdkLambdaDashboardStack(
   app,
   "LambdaDashboardStack",
@@ -12,207 +13,35 @@ const lambdaDashboardStack = new CdkLambdaDashboardStack(
   }
 );
 
-// const transactionsApi = new TransactionsAPI(
-//   lambdaDashboardStack,
-//   "TransactionsApi"
-// );
-// lambdaDashboardStack.addLambda("BeginTransaction", "BeginTransaction");
-// lambdaDashboardStack.addLambda("UpdateTransaction", "UpdateTransaction");
-// lambdaDashboardStack.addLambda("GetTransaction", "GetTransaction");
+// Create a graph widget to display incoming bytes for each Lambda function
+const logsWidget = new GraphWidget({
+  width: 24, // Width of the widget
+  title: "Incoming Bytes for Lambda Functions", // Widget title
+  left: [], // Metrics to display on the left Y-axis
+  right: [], // Metrics to display on the right Y-axis
+  height: 12,
+});
 
-// Trying to keep this roughly ordered based on the volume / criticality of the functions
-// ===================
-// High usage
-// ===================
-lambdaDashboardStack.addLambda(
-  "CreateFullReviewStack-PopulateGameSummaryFunction-1CKMNQ86EWASV",
-  "trigger-create-full-review"
-);
-lambdaDashboardStack.addLambda(
-  "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
-  "api-retrieve-user-match-stats-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
-  "process-save-bgs-post-match-stats"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
-  "api-retrieve-user-bgs-best-stats-2"
-);
-lambdaDashboardStack.addLambda(
-  "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
-  "api-retrieve-duels-leaderboard-2"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
-  "api-retrieve-user-duels-runs-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
-  "api-retrieve-achievements-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
-  "api-retrieve-arena-rewards-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
-  "process-save-packs"
-);
-lambdaDashboardStack.addLambda(
-  "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
-  "process-assign-archetype"
-);
+// Add incoming bytes metrics for each Lambda function to the graph widget
+lambdaDefinitions.forEach(({ id, name }, index) => {
+  const metricName = "IncomingBytes"; // Replace with the correct metric name
+  const metric = new Metric({
+    label: name,
+    namespace: "AWS/Logs", // Lambda metric namespace
+    metricName,
+    dimensions: {
+      LogGroupName: `/aws/lambda/${id}`,
+    },
+    statistic: "Sum", // You can change the statistic based on your preference
+  });
 
-// ===================
-// Crons
-// ===================
-lambdaDashboardStack.addLambda(
-  "BuildBattlegroundsHeroSta-BuildBgsHeroStatsFunctio-1SZDUSKPTX915",
-  "cron-build-bgs-hero-stats"
-);
-lambdaDashboardStack.addLambda(
-  "CronExportStatsStack-ExportHsDecks-SQQQwX0TL7eF",
-  "cron-export-stats-hsdecks"
-);
-lambdaDashboardStack.addLambda(
-  "PublishBgsPerfectGameStac-BuildBgsPerfectGamesFunc-FGdcis7zkK8W",
-  "cron-build-bgs-perfect-games"
-);
-lambdaDashboardStack.addLambda(
-  "TriggerBuildDuelsStatsStac-BuildDuelsStatsFunction-C99P6IG8LRFL",
-  "cron-build-duels-stats"
-);
-lambdaDashboardStack.addLambda(
-  "LotteryStack-PickLotterWinnersFunction-tOirJ6hxlXOL",
-  "cron-pick-lottery-winners"
-);
-lambdaDashboardStack.addLambda(
-  "ConstructedStatsStack-BuildConstructedDeckStats-vr9hB67T5NX2",
-  "cron-build-constructed-deck-stats"
-);
+  // Add the metric to the graph widget
+  logsWidget.addLeftMetric(metric);
+});
 
-// ===================
-// The rest
-// ===================
-lambdaDashboardStack.addLambda(
-  "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
-  "api-retrieve-user-match-stats"
-);
-lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
-  "api-start-save-twitch-presence-2"
-);
-lambdaDashboardStack.addLambda(
-  "TwitchPresenceStack-RetrieveTwitchPresenceFunction-asbSWYenLgW0",
-  "api-retrieve-twitch-presence-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-RetrieveBgsPostMatchStat-A84Wj7WJ7NqZ",
-  "api-retrieve-bgs-post-match-stats-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserArenaRewardsStack-StartSaveArenaRewardsFunctio-iSDQqoK8wzIs",
-  "api-start-save-arena-rewards-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-s4bDntWeqkXH",
-  "api-start-save-bgs-post-match-stats-2"
-);
-lambdaDashboardStack.addLambda(
-  "AuthStack-AuthFunction-Q68CiWS0cRqs",
-  "auth-website"
-);
-lambdaDashboardStack.addLambda(
-  "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-XdHoinVSW1lU",
-  "api-bgs-get-id-from-sample-2"
-);
-lambdaDashboardStack.addLambda(
-  "MRLambdaStack-AggregatorFunction-1MAQYAZ77F682",
-  "mr-lambda-aggregator"
-);
-lambdaDashboardStack.addLambda(
-  "MRLambdaStack-DriverFunction-1HMIH97JIJS2A",
-  "mr-lambda-driver"
-);
-lambdaDashboardStack.addLambda(
-  "MRLambdaStack-MapperFunction-1NU11S9BLCB9B",
-  "mr-lambda-mapper"
-);
-lambdaDashboardStack.addLambda(
-  "MRLambdaStack-MapperWatcherFunction-1RQPAF6SW7ZEC",
-  "mr-lambda-mapper-watcher"
-);
-lambdaDashboardStack.addLambda(
-  "MRLambdaStack-ReducerFunction-1RUWC6SIUC6DN",
-  "mr-lambda-reducer"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveBgsSimulationSamp-RetrieveBgsSimulationSam-NB5kBWGr0f0I",
-  "api-bgs-retrieve-simulation-sample-2"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveDuelsSingleRunSta-RetrieveDuelsSingleRunFu-ixek2vFX6Dlu",
-  "api-retrieve-duels-single-run-2"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveGlobalStatsStack-ProcessGlobalStatsFunctio-13LLAFGKONTIZ",
-  "api-retrieve-user-global-stats"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveGlobalStatsStack-RetrieveGlobalStatsFuncti-XoTxr4I7PIwH",
-  "api-retrieve-overview-global-stats-2"
-);
-lambdaDashboardStack.addLambda(
-  "RetrieveReviewStack-RetrieveReviewFunction2-JWlhajdkQTjc",
-  "api-retrieve-review-2"
-);
-lambdaDashboardStack.addLambda(
-  "SimulateBgsBattleStack-SimulateBgsBattleFunctionLi-BhXWqLooZGey",
-  "api-simulate-battlegrounds-battle-2"
-);
-lambdaDashboardStack.addLambda(
-  "SyncDataStack-ProcessSyncStatsFunction-sEKcsqtW3rys",
-  "process-sync-stats"
-);
-lambdaDashboardStack.addLambda(
-  "UserMappingStack2-StartSaveMappingFunction-1XPZIJ8YG29RH",
-  "api-start-save-mapping"
-);
-lambdaDashboardStack.addLambda(
-  "UserMappingStack2-StartSaveMappingFunction2-N8wDp6ws7NqN",
-  "api-start-save-mapping-2"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-RetrieveOwnProfileFunction-OPzqESAYjDju",
-  "api-retrieve-own-profile"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-RetrieveOtherProfileFunction-aNvcb2vibmPU",
-  "api-retrieve-other-profile"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-UpdateProfileFunction-oDgojeMfjskx",
-  "api-update-profile"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-ShareProfileFunction-IedKMblyFEBn",
-  "api-share-profile"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-UnshareProfileFunction-d1TVXzlunAht",
-  "api-unshare-profile"
-);
-lambdaDashboardStack.addLambda(
-  "UserProfileStack-RetrieveProfileFunction-FLZZpdmlf10v",
-  "api-retrieve-profile"
-);
-lambdaDashboardStack.addLambda(
-  "AuthStack-GenerateFirestoneTokenFunction-w2TohjJDEwgm",
-  "api-generate-firestone-token"
-);
-lambdaDashboardStack.addLambda(
-  "LotteryStack-UpdateLotteryFunction-gZOvlcn8cWE6",
-  "api-lottery-update"
-);
+lambdaDashboardStack.addWidget(logsWidget);
+
+// Iterate over the lambdaDefinitions array to add Lambda widgets
+lambdaDefinitions.forEach(({ id, name }) => {
+  lambdaDashboardStack.addLambda(id, name);
+});
