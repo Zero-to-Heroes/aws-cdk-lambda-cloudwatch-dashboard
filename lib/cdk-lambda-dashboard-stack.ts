@@ -11,6 +11,9 @@ export interface LambdaDashboardsStackProps extends cdk.StackProps {
   dashboardName: string;
 }
 
+const GRAPH_WIDTH = 5;
+// const GRAPH_HEIGHT = 7;
+
 export class CdkLambdaDashboardStack extends cdk.Stack {
   protected readonly lambdaDashboard: Dashboard;
 
@@ -135,6 +138,8 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
             dimensions: dimensions,
           }),
         ],
+        width: GRAPH_WIDTH,
+        // height: GRAPH_HEIGHT,
       }),
 
       new GraphWidget({
@@ -145,6 +150,8 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
           }),
         ],
         right: [this.availability(functionName)],
+        width: GRAPH_WIDTH,
+        // height: GRAPH_HEIGHT,
       }),
 
       new GraphWidget({
@@ -154,6 +161,8 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
             dimensions: dimensions,
           }),
         ],
+        width: GRAPH_WIDTH,
+        // height: GRAPH_HEIGHT,
       }),
 
       new GraphWidget({
@@ -172,6 +181,8 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
             },
           }),
         ],
+        width: GRAPH_WIDTH,
+        // height: GRAPH_HEIGHT,
       })
 
       // new GraphWidget({
