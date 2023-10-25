@@ -71,8 +71,12 @@ export const lambdaDefinitions = [
     name: "cron-build-constructed-deck-stats",
   },
   {
-    id: "ConstructedStatsStack-BuildDailyConstructedDeckSta-qExPWzoLx5TX ",
+    id: "ConstructedStatsStack-BuildDailyConstructedDeckSta-qExPWzoLx5TX",
     name: "cron-build-daily-constructed-deck-stats",
+  },
+  {
+    id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
+    name: "cron-aggregate-daily-constructed-deck-stats",
   },
   // ===================
   // The rest
