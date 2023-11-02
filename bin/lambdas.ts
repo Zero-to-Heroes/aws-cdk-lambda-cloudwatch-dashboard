@@ -82,6 +82,10 @@ export const lambdaDefinitions = [
   // The rest
   // ===================
   {
+    id: "ConstructedStatsStack-RetrieveConstructedDeckDetai-FTPQYhwnZT1v",
+    name: "api-get-constructed-meta-deck",
+  },
+  {
     id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
     name: "api-retrieve-user-match-stats",
   },
