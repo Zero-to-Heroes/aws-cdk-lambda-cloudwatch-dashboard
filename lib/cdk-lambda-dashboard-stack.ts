@@ -13,6 +13,7 @@ export interface LambdaDashboardsStackProps extends cdk.StackProps {
 
 const GRAPH_WIDTH = 4;
 // const GRAPH_HEIGHT = 7;
+const SLOW_PERIOD = 60;
 
 export class CdkLambdaDashboardStack extends cdk.Stack {
   protected readonly lambdaDashboard: Dashboard;
@@ -28,6 +29,7 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     metricName: "Duration",
     statistic: "average",
     color: "#ff7f0e",
+    period: cdk.Duration.minutes(SLOW_PERIOD),
   });
 
   protected readonly maxDuration = new Metric({
@@ -35,6 +37,7 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     metricName: "Duration",
     statistic: "maximum",
     color: "#2ca02c",
+    period: cdk.Duration.minutes(SLOW_PERIOD),
   });
 
   protected readonly errors = new Metric({
@@ -99,6 +102,7 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     namespace: "AWS/Lambda",
     metricName: "ConcurrentExecutions",
     statistic: "maximum",
+    period: cdk.Duration.minutes(SLOW_PERIOD),
   });
 
   protected readonly provisionedConcurrentExecutions = new Metric({
