@@ -11,7 +11,7 @@ export interface LambdaDashboardsStackProps extends cdk.StackProps {
   dashboardName: string;
 }
 
-const GRAPH_WIDTH = 5;
+const GRAPH_WIDTH = 4;
 // const GRAPH_HEIGHT = 7;
 
 export class CdkLambdaDashboardStack extends cdk.Stack {
@@ -23,11 +23,19 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     statistic: "sum",
   });
 
-  // protected readonly duration = new Metric({
-  //     namespace: "AWS/Lambda",
-  //     metricName: "Duration",
-  //     statistic: "min"
-  // });
+  protected readonly averageDuration = new Metric({
+    namespace: "AWS/Lambda",
+    metricName: "Duration",
+    statistic: "average",
+    color: "#ff7f0e",
+  });
+
+  protected readonly maxDuration = new Metric({
+    namespace: "AWS/Lambda",
+    metricName: "Duration",
+    statistic: "maximum",
+    color: "#2ca02c",
+  });
 
   protected readonly errors = new Metric({
     namespace: "AWS/Lambda",
@@ -60,20 +68,20 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
     });
 
   // TODO/ Maybe look https://aws.amazon.com/blogs/mt/visualizing-amazon-cloudwatch-costs-part-2-where-does-the-data-come-from/
-  protected readonly cost = (functionName: string) =>
-    new MathExpression({
-      label: "Cost ($)",
-      color: "#2ca02c",
-      expression: "100 - 100 * errors / MAX([errors, invocations])",
-      usingMetrics: {
-        errors: this.errors.with({
-          dimensions: { FunctionName: functionName },
-        }),
-        invocations: this.invocations.with({
-          dimensions: { FunctionName: functionName },
-        }),
-      },
-    });
+  // protected readonly cost = (functionName: string) =>
+  //   new MathExpression({
+  //     label: "Cost ($)",
+  //     color: "#2ca02c",
+  //     expression: "100 - 100 * errors / MAX([errors, invocations])",
+  //     usingMetrics: {
+  //       errors: this.errors.with({
+  //         dimensions: { FunctionName: functionName },
+  //       }),
+  //       invocations: this.invocations.with({
+  //         dimensions: { FunctionName: functionName },
+  //       }),
+  //     },
+  //   });
 
   protected readonly throttles = new Metric({
     namespace: "AWS/Lambda",
@@ -150,6 +158,14 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
           }),
         ],
         right: [this.availability(functionName)],
+        width: GRAPH_WIDTH,
+        // height: GRAPH_HEIGHT,
+      }),
+
+      new GraphWidget({
+        title: displayName + " Durations",
+        left: [this.averageDuration.with({ dimensions: dimensions })],
+        right: [this.maxDuration.with({ dimensions: dimensions })],
         width: GRAPH_WIDTH,
         // height: GRAPH_HEIGHT,
       }),
