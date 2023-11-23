@@ -43,6 +43,10 @@ export const lambdaDefinitions = [
     id: "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
     name: "process-assign-archetype",
   },
+  {
+    id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR ",
+    name: "process-arena-match-stats",
+  },
   // ===================
   // Crons
   // ===================
@@ -73,6 +77,14 @@ export const lambdaDefinitions = [
   {
     id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
     name: "cron-aggregate-daily-constructed-deck-stats",
+  },
+  {
+    id: "ArenaStatsStack-AggregateDailyArenaClassStats-BXUPpt2tjwRt ",
+    name: "cron-aggregate-daily-arena-class-stats",
+  },
+  {
+    id: "ArenaStatsStack-BuildDailyArenaClassStats-yE4YEqM7RVal ",
+    name: "cron-build-daily-arena-class-stats",
   },
   // ===================
   // The rest
