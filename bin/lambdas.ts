@@ -44,7 +44,7 @@ export const lambdaDefinitions = [
     name: "process-assign-archetype",
   },
   {
-    id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR ",
+    id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR",
     name: "process-arena-match-stats",
   },
   // ===================
@@ -79,11 +79,11 @@ export const lambdaDefinitions = [
     name: "cron-aggregate-daily-constructed-deck-stats",
   },
   {
-    id: "ArenaStatsStack-AggregateDailyArenaClassStats-BXUPpt2tjwRt ",
+    id: "ArenaStatsStack-AggregateDailyArenaClassStats-BXUPpt2tjwRt",
     name: "cron-aggregate-daily-arena-class-stats",
   },
   {
-    id: "ArenaStatsStack-BuildDailyArenaClassStats-yE4YEqM7RVal ",
+    id: "ArenaStatsStack-BuildDailyArenaClassStats-yE4YEqM7RVal",
     name: "cron-build-daily-arena-class-stats",
   },
   // ===================
