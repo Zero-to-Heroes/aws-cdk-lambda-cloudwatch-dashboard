@@ -47,6 +47,14 @@ export const lambdaDefinitions = [
     id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR",
     name: "process-arena-match-stats",
   },
+  {
+    id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx ",
+    name: "api-ow-legacy-get-status",
+  },
+  {
+    id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH ",
+    name: "api-ow-legacy-unsub",
+  },
   // ===================
   // Crons
   // ===================
