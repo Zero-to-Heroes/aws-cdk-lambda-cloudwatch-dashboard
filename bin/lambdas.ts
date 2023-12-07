@@ -48,12 +48,16 @@ export const lambdaDefinitions = [
     name: "process-arena-match-stats",
   },
   {
-    id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx ",
+    id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx",
     name: "api-ow-legacy-get-status",
   },
   {
-    id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH ",
+    id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH",
     name: "api-ow-legacy-unsub",
+  },
+  {
+    id: "OwLegacySubStack-GetTebexSubDetails-v0VuBSTs7bmW",
+    name: "api-get-tebex-sub-details",
   },
   // ===================
   // Crons
@@ -79,12 +83,16 @@ export const lambdaDefinitions = [
     name: "cron-pick-lottery-winners",
   },
   {
+    id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
+    name: "cron-aggregate-daily-constructed-deck-stats",
+  },
+  {
     id: "ConstructedStatsStack-BuildDailyConstructedDeckSta-qExPWzoLx5TX",
     name: "cron-build-daily-constructed-deck-stats",
   },
   {
-    id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
-    name: "cron-aggregate-daily-constructed-deck-stats",
+    id: "ConstructedStatsStack-BuildHourlyConstructedDeckSt-W2nqr4VnQMBZ",
+    name: "cron-build-hourly-constructed-deck-stats",
   },
   {
     id: "ArenaStatsStack-AggregateDailyArenaClassStats-BXUPpt2tjwRt",
