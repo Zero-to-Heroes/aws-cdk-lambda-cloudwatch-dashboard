@@ -71,6 +71,14 @@ export const lambdaDefinitions = [
     name: "cron-build-hourly-constructed-deck-stats",
   },
   {
+    id: "BuildBattlegroundsHeroSta-AggregateHourlyHeroStats-q2fATpfKb5vX",
+    name: "cron-aggregate-hourly-bgs-hero-stats",
+  },
+  {
+    id: "BuildBattlegroundsHeroStatsS-BuildHourlyHeroStats2-DTnWtoHAP07E",
+    name: "cron-build-hourly-bgs-hero-stats",
+  },
+  {
     id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
     name: "cron-aggregate-daily-constructed-deck-stats",
   },
