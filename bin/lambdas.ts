@@ -63,6 +63,22 @@ export const lambdaDefinitions = [
   // Crons
   // ===================
   {
+    id: "ConstructedStatsStack-AggregateHourlyConstructedDe-G3dWAh8a6mbt",
+    name: "cron-aggregate-hourly-constructed-deck-stats",
+  },
+  {
+    id: "ConstructedStatsStack-BuildHourlyConstructedDeckSt-W2nqr4VnQMBZ",
+    name: "cron-build-hourly-constructed-deck-stats",
+  },
+  {
+    id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
+    name: "cron-aggregate-daily-constructed-deck-stats",
+  },
+  {
+    id: "ConstructedStatsStack-BuildDailyConstructedDeckSta-qExPWzoLx5TX",
+    name: "cron-build-daily-constructed-deck-stats",
+  },
+  {
     id: "BuildBattlegroundsHeroSta-BuildBgsHeroStatsFunctio-1SZDUSKPTX915",
     name: "cron-build-bgs-hero-stats",
   },
@@ -81,18 +97,6 @@ export const lambdaDefinitions = [
   {
     id: "LotteryStack-PickLotterWinnersFunction-tOirJ6hxlXOL",
     name: "cron-pick-lottery-winners",
-  },
-  {
-    id: "ConstructedStatsStack-AggregateDailyConstructedDec-6CGw2KZGrArv",
-    name: "cron-aggregate-daily-constructed-deck-stats",
-  },
-  {
-    id: "ConstructedStatsStack-BuildDailyConstructedDeckSta-qExPWzoLx5TX",
-    name: "cron-build-daily-constructed-deck-stats",
-  },
-  {
-    id: "ConstructedStatsStack-BuildHourlyConstructedDeckSt-W2nqr4VnQMBZ",
-    name: "cron-build-hourly-constructed-deck-stats",
   },
   {
     id: "ArenaStatsStack-AggregateDailyArenaClassStats-BXUPpt2tjwRt",
