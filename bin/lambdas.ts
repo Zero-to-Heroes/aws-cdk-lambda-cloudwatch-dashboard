@@ -63,16 +63,20 @@ export const lambdaDefinitions = [
   // Crons
   // ===================
   {
-    id: "ConstructedStatsStack-AggregateHourlyConstructedDe-G3dWAh8a6mbt",
-    name: "cron-aggregate-hourly-constructed-deck-stats",
+    id: "ConstructedStatsStack-FinalStats-0SB3G7u8MjJ0",
+    name: "cron-constructed-final-stat",
+  },
+  {
+    id: "ConstructedStatsStack-FinalStatsByClass-m8tytnan6Rm2",
+    name: "cron-constructed-final-stats-by-class",
+  },
+  {
+    id: "ConstructedStatsStack-BuildDailyAggregateDeckStats-v1LTE9sunYuL",
+    name: "cron-build-daily-aggregate-deck-stats",
   },
   {
     id: "ConstructedStatsStack-BuildHourlyConstructedDeckSt-W2nqr4VnQMBZ",
     name: "cron-build-hourly-constructed-deck-stats",
-  },
-  {
-    id: "ConstructedStatsStack-BuildDailyAggregateDeckStats-v1LTE9sunYuL",
-    name: "cron-build-daily-aggregate-constructed-deck-stats",
   },
   {
     id: "BuildBattlegroundsHeroSta-AggregateHourlyHeroStats-q2fATpfKb5vX",
