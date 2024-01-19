@@ -107,12 +107,16 @@ export const lambdaDefinitions = [
     name: "cron-pick-lottery-winners",
   },
   {
-    id: "ArenaStatsStack-AggregateDailyArenaClassStats-BXUPpt2tjwRt",
-    name: "cron-aggregate-daily-arena-class-stats",
+    id: "ArenaStatsStack-FinalStats-6Lv4TUiLl6sl",
+    name: "cron-arena-final-stats",
   },
   {
-    id: "ArenaStatsStack-BuildDailyArenaClassStats-yE4YEqM7RVal",
-    name: "cron-build-daily-arena-class-stats",
+    id: "ArenaStatsStack-BuildDailyAggregateStats-DCloqNEtgSre",
+    name: "cron-build-daily-arena-aggregate-stats",
+  },
+  {
+    id: "ArenaStatsStack-BuildHourlyArenaClassStats-ratbVgmKuz8H",
+    name: "cron-build-hourly-arena-class-stats",
   },
   // ===================
   // The rest
