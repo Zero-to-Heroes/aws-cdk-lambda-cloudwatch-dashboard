@@ -59,6 +59,14 @@ export const lambdaDefinitions = [
     id: "OwLegacySubStack-GetTebexSubDetails-v0VuBSTs7bmW",
     name: "api-get-tebex-sub-details",
   },
+  {
+    id: "ArenaDraftPickStack-StartSaveArenaDraftPickFunctio-L9RuiZXRQ9nh",
+    name: "api-start-save-arena-draft-pick",
+  },
+  {
+    id: "ArenaDraftPickStack-ProcessSaveArenaDraftPickFunct-QuIyGP8WgoYO",
+    name: "process-save-arena-draft-pick",
+  },
   // ===================
   // Crons
   // ===================
