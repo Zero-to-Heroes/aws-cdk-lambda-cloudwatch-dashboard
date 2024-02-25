@@ -7,66 +7,6 @@ export const lambdaDefinitions = [
     id: "CreateFullReviewStack-PopulateGameSummaryFunction-1CKMNQ86EWASV",
     name: "trigger-create-full-review",
   },
-  {
-    id: "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
-    name: "api-retrieve-user-match-stats-2",
-  },
-  {
-    id: "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
-    name: "process-save-bgs-post-match-stats",
-  },
-  {
-    id: "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
-    name: "api-retrieve-user-bgs-best-stats-2",
-  },
-  {
-    id: "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
-    name: "api-retrieve-duels-leaderboard-2",
-  },
-  {
-    id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
-    name: "api-retrieve-user-duels-runs-2",
-  },
-  {
-    id: "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
-    name: "api-retrieve-achievements-2",
-  },
-  {
-    id: "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
-    name: "api-retrieve-arena-rewards-2",
-  },
-  {
-    id: "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
-    name: "process-save-packs",
-  },
-  {
-    id: "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
-    name: "process-assign-archetype",
-  },
-  {
-    id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR",
-    name: "process-arena-match-stats",
-  },
-  {
-    id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx",
-    name: "api-ow-legacy-get-status",
-  },
-  {
-    id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH",
-    name: "api-ow-legacy-unsub",
-  },
-  {
-    id: "OwLegacySubStack-GetTebexSubDetails-v0VuBSTs7bmW",
-    name: "api-get-tebex-sub-details",
-  },
-  {
-    id: "ArenaDraftPickStack-StartSaveArenaDraftPickFunctio-L9RuiZXRQ9nh",
-    name: "api-start-save-arena-draft-pick",
-  },
-  {
-    id: "ArenaDraftPickStack-ProcessSaveArenaDraftPickFunct-QuIyGP8WgoYO",
-    name: "process-save-arena-draft-pick",
-  },
   // ===================
   // Crons
   // ===================
@@ -142,12 +82,73 @@ export const lambdaDefinitions = [
   // The rest
   // ===================
   {
+    id: "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
+    name: "api-retrieve-user-match-stats-2",
+  },
+  {
+    id: "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
+    name: "process-save-bgs-post-match-stats",
+  },
+  {
+    id: "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
+    name: "api-retrieve-user-bgs-best-stats-2",
+  },
+  {
+    id: "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
+    name: "api-retrieve-duels-leaderboard-2",
+  },
+  {
+    id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
+    name: "api-retrieve-user-duels-runs-2",
+  },
+  {
+    id: "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
+    name: "api-retrieve-achievements-2",
+  },
+  {
+    id: "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
+    name: "api-retrieve-arena-rewards-2",
+  },
+  {
+    id: "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
+    name: "process-save-packs",
+  },
+  {
+    id: "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
+    name: "process-assign-archetype",
+  },
+  {
+    id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR",
+    name: "process-arena-match-stats",
+  },
+  {
+    id: "ArenaDraftPickStack-StartSaveArenaDraftPickFunctio-L9RuiZXRQ9nh",
+    name: "api-start-save-arena-draft-pick",
+  },
+  {
+    id: "ArenaDraftPickStack-ProcessSaveArenaDraftPickFunct-QuIyGP8WgoYO",
+    name: "process-save-arena-draft-pick",
+  },
+  {
     id: "ConstructedStatsStack-RetrieveConstructedDeckDetai-FTPQYhwnZT1v",
     name: "api-get-constructed-meta-deck",
   },
   {
     id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
     name: "api-retrieve-user-match-stats",
+  },
+
+  {
+    id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx",
+    name: "api-ow-legacy-get-status",
+  },
+  {
+    id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH",
+    name: "api-ow-legacy-unsub",
+  },
+  {
+    id: "OwLegacySubStack-GetTebexSubDetails-v0VuBSTs7bmW",
+    name: "api-get-tebex-sub-details",
   },
   {
     id: "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
