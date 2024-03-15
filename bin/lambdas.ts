@@ -110,6 +110,14 @@ export const lambdaDefinitions = [
     name: "api-retrieve-arena-rewards-2",
   },
   {
+    id: "ArenaDraftPickStack-SaveArenaDraftStats-VusorLzBrWAh",
+    name: "api-save-draft-stat",
+  },
+  {
+    id: "ArenaDraftPickStack-RetrieveArenaDraftStats-PA93sQZxzhQE",
+    name: "api-retrieve-draft-stat",
+  },
+  {
     id: "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
     name: "process-save-packs",
   },
