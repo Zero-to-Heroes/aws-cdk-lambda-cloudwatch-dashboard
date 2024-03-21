@@ -101,7 +101,7 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
   protected readonly concurrentExecutions = new Metric({
     namespace: "AWS/Lambda",
     metricName: "ConcurrentExecutions",
-    statistic: "maximum",
+    statistic: "average",
     period: cdk.Duration.minutes(SLOW_PERIOD),
   });
 
@@ -175,7 +175,7 @@ export class CdkLambdaDashboardStack extends cdk.Stack {
       }),
 
       new GraphWidget({
-        title: displayName + " Max Concurrent Executions",
+        title: displayName + " Avg Concurrent Executions",
         left: [
           this.concurrentExecutions.with({
             dimensions: dimensions,
