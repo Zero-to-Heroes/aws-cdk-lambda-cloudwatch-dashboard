@@ -78,6 +78,19 @@ export const lambdaDefinitions = [
     id: "ArenaDraftPickStack-BuildHourlyArenaDraftStats-jSmKACb3XvZ9",
     name: "cron-build-hourly-arena-draft-stats",
   },
+  {
+    id: "ArenaHighWinRunsStack-BuildHourlyArenaHighWinRuns-7XsR2edTjNc8",
+    name: "cron-build-hourly-arena-high-win-runs",
+  },
+  {
+    id: "ArenaHighWinRunsStack-BuildDailyAggregateStats-DAUugNJWr7ee",
+    name: "cron-build-hourly-arena-high-win-runs",
+  },
+  {
+    id: "ArenaHighWinRunsStack-FinalStats-Jb9oI0btcw9D",
+    name: "cron-arena-high-win-runs-final-stats",
+  },
+
   // ===================
   // The rest
   // ===================
