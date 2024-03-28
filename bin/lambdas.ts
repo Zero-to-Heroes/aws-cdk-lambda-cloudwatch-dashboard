@@ -90,6 +90,10 @@ export const lambdaDefinitions = [
     id: "ArenaHighWinRunsStack-FinalStats-Jb9oI0btcw9D",
     name: "cron-arena-high-win-runs-final-stats",
   },
+  {
+    id: "OfficialLeaderboardsStack-UpdateBattlegroundsLeade-RVLvnG1YUOKt",
+    name: "cron-update-battlegrounds-leaderboard",
+  },
 
   // ===================
   // The rest
