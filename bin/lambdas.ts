@@ -51,10 +51,10 @@ export const lambdaDefinitions = [
     id: "PublishBgsPerfectGameStac-BuildBgsPerfectGamesFunc-FGdcis7zkK8W",
     name: "cron-build-bgs-perfect-games",
   },
-  {
-    id: "TriggerBuildDuelsStatsStac-BuildDuelsStatsFunction-C99P6IG8LRFL",
-    name: "cron-build-duels-stats",
-  },
+  // {
+  //   id: "TriggerBuildDuelsStatsStac-BuildDuelsStatsFunction-C99P6IG8LRFL",
+  //   name: "cron-build-duels-stats",
+  // },
   {
     id: "LotteryStack-PickLotterWinnersFunction-tOirJ6hxlXOL",
     name: "cron-pick-lottery-winners",
@@ -99,6 +99,25 @@ export const lambdaDefinitions = [
     id: "OfficialLeaderboardsStack-UpdateBattlegroundsLeade-RVLvnG1YUOKt",
     name: "cron-update-battlegrounds-leaderboard",
   },
+  {
+    id: "CommunitiesStack-ProcessRecentGames-HBClyVqXTr29",
+    name: "cron-communities-process-recent-games",
+  },
+  // ===================
+  // Triggers / important endpoints
+  // ===================
+  {
+    id: "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
+    name: "process-assign-archetype",
+  },
+  {
+    id: "SimulateBgsBattleStack-SimulateBgsBattleFunctionLi-BhXWqLooZGey",
+    name: "api-simulate-battlegrounds-battle-2",
+  },
+  {
+    id: "SyncDataStack-ProcessSyncStatsFunction-sEKcsqtW3rys",
+    name: "process-sync-stats",
+  },
 
   // ===================
   // The rest
@@ -115,14 +134,14 @@ export const lambdaDefinitions = [
     id: "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
     name: "api-retrieve-user-bgs-best-stats-2",
   },
-  {
-    id: "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
-    name: "api-retrieve-duels-leaderboard-2",
-  },
-  {
-    id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
-    name: "api-retrieve-user-duels-runs-2",
-  },
+  // {
+  //   id: "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
+  //   name: "api-retrieve-duels-leaderboard-2",
+  // },
+  // {
+  //   id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
+  //   name: "api-retrieve-user-duels-runs-2",
+  // },
   {
     id: "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
     name: "api-retrieve-achievements-2",
@@ -144,10 +163,6 @@ export const lambdaDefinitions = [
     name: "process-save-packs",
   },
   {
-    id: "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
-    name: "process-assign-archetype",
-  },
-  {
     id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR",
     name: "process-arena-match-stats",
   },
@@ -163,23 +178,18 @@ export const lambdaDefinitions = [
     id: "ConstructedStatsStack-RetrieveConstructedDeckDetai-FTPQYhwnZT1v",
     name: "api-get-constructed-meta-deck",
   },
-  {
-    id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-QEE0W6SAZ3M",
-    name: "api-retrieve-user-match-stats",
-  },
-
-  {
-    id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx",
-    name: "api-ow-legacy-get-status",
-  },
-  {
-    id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH",
-    name: "api-ow-legacy-unsub",
-  },
-  {
-    id: "OwLegacySubStack-GetTebexSubDetails-v0VuBSTs7bmW",
-    name: "api-get-tebex-sub-details",
-  },
+  // {
+  //   id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx",
+  //   name: "api-ow-legacy-get-status",
+  // },
+  // {
+  //   id: "OwLegacySubStack-UnsubscribeUserFromLegacyOwSub-2u1IIVeVc5CH",
+  //   name: "api-ow-legacy-unsub",
+  // },
+  // {
+  //   id: "OwLegacySubStack-GetTebexSubDetails-v0VuBSTs7bmW",
+  //   name: "api-get-tebex-sub-details",
+  // },
   {
     id: "TwitchPresenceStack-StartSaveTwitchPresenceFunctio-lcpZzlXVCHOj",
     name: "api-start-save-twitch-presence-2",
@@ -200,46 +210,22 @@ export const lambdaDefinitions = [
     id: "UserBgsPostMatchStatsStac-StartSaveBgsPostMatchSta-s4bDntWeqkXH",
     name: "api-start-save-bgs-post-match-stats-2",
   },
-  {
-    id: "AuthStack-AuthFunction-Q68CiWS0cRqs",
-    name: "auth-website",
-  },
+  // {
+  //   id: "AuthStack-AuthFunction-Q68CiWS0cRqs",
+  //   name: "auth-website",
+  // },
   {
     id: "IdFromBgsSimulationSample-GetIdFromBgsSimulationSa-XdHoinVSW1lU",
     name: "api-bgs-get-id-from-sample-2",
   },
   {
-    id: "MRLambdaStack-AggregatorFunction-1MAQYAZ77F682",
-    name: "mr-lambda-aggregator",
-  },
-  {
-    id: "MRLambdaStack-DriverFunction-1HMIH97JIJS2A",
-    name: "mr-lambda-driver",
-  },
-  {
-    id: "MRLambdaStack-MapperFunction-1NU11S9BLCB9B",
-    name: "mr-lambda-mapper",
-  },
-  {
-    id: "MRLambdaStack-MapperWatcherFunction-1RQPAF6SW7ZEC",
-    name: "mr-lambda-mapper-watcher",
-  },
-  {
-    id: "MRLambdaStack-ReducerFunction-1RUWC6SIUC6DN",
-    name: "mr-lambda-reducer",
-  },
-  {
     id: "RetrieveBgsSimulationSamp-RetrieveBgsSimulationSam-NB5kBWGr0f0I",
     name: "api-bgs-retrieve-simulation-sample-2",
   },
-  {
-    id: "RetrieveDuelsSingleRunSta-RetrieveDuelsSingleRunFu-ixek2vFX6Dlu",
-    name: "api-retrieve-duels-single-run-2",
-  },
-  {
-    id: "RetrieveGlobalStatsStack-ProcessGlobalStatsFunctio-13LLAFGKONTIZ",
-    name: "api-retrieve-user-global-stats",
-  },
+  // {
+  //   id: "RetrieveDuelsSingleRunSta-RetrieveDuelsSingleRunFu-ixek2vFX6Dlu",
+  //   name: "api-retrieve-duels-single-run-2",
+  // },
   {
     id: "RetrieveGlobalStatsStack-RetrieveGlobalStatsFuncti-XoTxr4I7PIwH",
     name: "api-retrieve-overview-global-stats-2",
@@ -249,14 +235,6 @@ export const lambdaDefinitions = [
     name: "api-retrieve-review-2",
   },
   {
-    id: "SimulateBgsBattleStack-SimulateBgsBattleFunctionLi-BhXWqLooZGey",
-    name: "api-simulate-battlegrounds-battle-2",
-  },
-  {
-    id: "SyncDataStack-ProcessSyncStatsFunction-sEKcsqtW3rys",
-    name: "process-sync-stats",
-  },
-  {
     id: "UserMappingStack2-StartSaveMappingFunction-1XPZIJ8YG29RH",
     name: "api-start-save-mapping",
   },
@@ -264,30 +242,30 @@ export const lambdaDefinitions = [
     id: "UserMappingStack2-StartSaveMappingFunction2-N8wDp6ws7NqN",
     name: "api-start-save-mapping-2",
   },
-  {
-    id: "UserProfileStack-RetrieveOwnProfileFunction-OPzqESAYjDju",
-    name: "api-retrieve-own-profile",
-  },
-  {
-    id: "UserProfileStack-RetrieveOtherProfileFunction-aNvcb2vibmPU",
-    name: "api-retrieve-other-profile",
-  },
-  {
-    id: "UserProfileStack-UpdateProfileFunction-oDgojeMfjskx",
-    name: "api-update-profile",
-  },
-  {
-    id: "UserProfileStack-ShareProfileFunction-IedKMblyFEBn",
-    name: "api-share-profile",
-  },
-  {
-    id: "UserProfileStack-UnshareProfileFunction-d1TVXzlunAht",
-    name: "api-unshare-profile",
-  },
-  {
-    id: "UserProfileStack-RetrieveProfileFunction-FLZZpdmlf10v",
-    name: "api-retrieve-profile",
-  },
+  // {
+  //   id: "UserProfileStack-RetrieveOwnProfileFunction-OPzqESAYjDju",
+  //   name: "api-retrieve-own-profile",
+  // },
+  // {
+  //   id: "UserProfileStack-RetrieveOtherProfileFunction-aNvcb2vibmPU",
+  //   name: "api-retrieve-other-profile",
+  // },
+  // {
+  //   id: "UserProfileStack-UpdateProfileFunction-oDgojeMfjskx",
+  //   name: "api-update-profile",
+  // },
+  // {
+  //   id: "UserProfileStack-ShareProfileFunction-IedKMblyFEBn",
+  //   name: "api-share-profile",
+  // },
+  // {
+  //   id: "UserProfileStack-UnshareProfileFunction-d1TVXzlunAht",
+  //   name: "api-unshare-profile",
+  // },
+  // {
+  //   id: "UserProfileStack-RetrieveProfileFunction-FLZZpdmlf10v",
+  //   name: "api-retrieve-profile",
+  // },
   {
     id: "AuthStack-GenerateFirestoneTokenFunction-w2TohjJDEwgm",
     name: "api-generate-firestone-token",
@@ -295,5 +273,17 @@ export const lambdaDefinitions = [
   {
     id: "LotteryStack-UpdateLotteryFunction-gZOvlcn8cWE6",
     name: "api-lottery-update",
+  },
+  {
+    id: "CommunitiesStack-RetrieveCommunity-yjqEGQ1qu3C8",
+    name: "api-retrieve-community",
+  },
+  {
+    id: "CommunitiesStack-JoinCommunity-dOlV0YNwq4Dt",
+    name: "api-join-community",
+  },
+  {
+    id: "CommunitiesStack-RetrieveUserCommunities-SAS4xixzJBtP",
+    name: "api-retrieve-user-communities",
   },
 ];
