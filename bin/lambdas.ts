@@ -286,4 +286,12 @@ export const lambdaDefinitions = [
     id: "CommunitiesStack-RetrieveUserCommunities-SAS4xixzJBtP",
     name: "api-retrieve-user-communities",
   },
+  {
+    id: "CommunitiesStack-LeaveCommunity-M2vCXW6uBmdA",
+    name: "api-leave-community",
+  },
+  {
+    id: "CommunitiesStack-CreateCommunity-k2PKbdGNa2uA",
+    name: "api-create-community",
+  },
 ];
