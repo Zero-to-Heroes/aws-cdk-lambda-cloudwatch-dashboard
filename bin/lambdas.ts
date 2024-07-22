@@ -103,8 +103,12 @@ export const lambdaDefinitions = [
     id: "CommunitiesStack-ProcessRecentGames-HBClyVqXTr29",
     name: "cron-communities-process-recent-games",
   },
+  {
+    id: "ConstructedStatsStack-RetrieveConstructedDeckDetai-FTPQYhwnZT1v",
+    name: "api-get-constructed-meta-deck",
+  },
   // ===================
-  // Triggers / important endpoints
+  // Triggers / important endpoints / high usage
   // ===================
   {
     id: "AssignArchetypeStack-ProcessAssignArchetypeFunctio-1hR8pDYlT7SF",
@@ -118,50 +122,6 @@ export const lambdaDefinitions = [
     id: "SyncDataStack-ProcessSyncStatsFunction-sEKcsqtW3rys",
     name: "process-sync-stats",
   },
-
-  // ===================
-  // The rest
-  // ===================
-  {
-    id: "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
-    name: "api-retrieve-user-match-stats-2",
-  },
-  {
-    id: "UserBgsPostMatchStatsStac-ProcessSaveBgsPostMatchS-1PD9UEYMIOSQ8",
-    name: "process-save-bgs-post-match-stats",
-  },
-  {
-    id: "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
-    name: "api-retrieve-user-bgs-best-stats-2",
-  },
-  // {
-  //   id: "DuelsLeaderboardStack-RetrieveDuelsLeaderboardFunc-gVud1Wo2IE8j",
-  //   name: "api-retrieve-duels-leaderboard-2",
-  // },
-  // {
-  //   id: "RetrieveUsersDuelsRunsSta-RetrieveUserDuelsRunFunc-7CGn1JSO1Mmx",
-  //   name: "api-retrieve-user-duels-runs-2",
-  // },
-  {
-    id: "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
-    name: "api-retrieve-achievements-2",
-  },
-  {
-    id: "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
-    name: "api-retrieve-arena-rewards-2",
-  },
-  {
-    id: "ArenaDraftPickStack-SaveArenaDraftStats-VusorLzBrWAh",
-    name: "api-save-draft-stat",
-  },
-  {
-    id: "ArenaDraftPickStack-RetrieveArenaDraftStats-PA93sQZxzhQE",
-    name: "api-retrieve-draft-stat",
-  },
-  {
-    id: "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
-    name: "process-save-packs",
-  },
   {
     id: "ArenaMatchStatsStack-ArenaMatchStatsProcessFunctio-BeRSvEwimZhR",
     name: "process-arena-match-stats",
@@ -174,9 +134,37 @@ export const lambdaDefinitions = [
     id: "ArenaDraftPickStack-ProcessSaveArenaDraftPickFunct-QuIyGP8WgoYO",
     name: "process-save-arena-draft-pick",
   },
+
+  // ===================
+  // The rest
+  // ===================
   {
-    id: "ConstructedStatsStack-RetrieveConstructedDeckDetai-FTPQYhwnZT1v",
-    name: "api-get-constructed-meta-deck",
+    id: "UserPacksStack-ProcessSavePacksFunction-1CBREIG8IM3RF",
+    name: "process-save-packs",
+  },
+  {
+    id: "ArenaDraftPickStack-SaveArenaDraftStats-VusorLzBrWAh",
+    name: "api-save-draft-stat",
+  },
+  {
+    id: "MatchStatsStack-ProcessMatchStatsFunction2-8qoxF7NzjWs5",
+    name: "api-retrieve-user-match-stats-2",
+  },
+  {
+    id: "RetrieveUserBgsBestStatsS-RetrieveUserBgsBestStats-tkbV418sS3Lg",
+    name: "api-retrieve-user-bgs-best-stats-2",
+  },
+  {
+    id: "UserAchievementsStack-RetrieveAchievementsFunction-tlzvG2EWGUci",
+    name: "api-retrieve-achievements-2",
+  },
+  {
+    id: "UserArenaRewardsStack-RetrieveArenaRewardsFunction-yu1culDYtDZb",
+    name: "api-retrieve-arena-rewards-2",
+  },
+  {
+    id: "ArenaDraftPickStack-RetrieveArenaDraftStats-PA93sQZxzhQE",
+    name: "api-retrieve-draft-stat",
   },
   // {
   //   id: "OwLegacySubStack-GetSubFromLegacyOwSub-vqH0APqzhFMx",
